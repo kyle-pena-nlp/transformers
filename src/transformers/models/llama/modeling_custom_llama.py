@@ -14,8 +14,14 @@ from transformers.utils import auto_docstring, can_return_tuple
 from transformers.modeling_rope_utils import dynamic_rope_update
 from transformers.cache_utils import Cache, DynamicCache
 from transformers.processing_utils import Unpack
+from ...modeling_outputs import BaseModelOutputWithPast
 from ...masking_utils import create_causal_mask
 
+from typing import Optional
+import logging
+
+
+logger = logging.get_logger(__name__)
 
 
 class CustomLlamaRotaryEmbedding(LlamaRotaryEmbedding):
